@@ -26,6 +26,14 @@ extern keymap_config_t keymap_config;
 #define KC_MB2 KC_MS_BTN2
 #define KC_MB3 KC_MS_BTN3
 
+enum unicode_names {
+    POOP
+};
+
+const uint32_t PROGMEM unicode_map[] = {
+    [POOP] = 0x1F4A9,
+};
+
 #define RAISE MO(_RAISE)
 #define LOWER MO(_LOWER)
 
@@ -94,7 +102,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 /* Lower
  * ,----------------------------------,                             ,----------------------------------,
- * |  `   |      |      |  -   |      |                             |      |  =   |      |   [  |   ]  |
+ * |  `   |      |      |  -   | Poop |                             |      |  =   |      |   [  |   ]  |
  * |------+------+------+------+------|                             |-------------+------+------+------|
  * |  1   |  2   |  3   |  4   |  5   |                             |  6   |  7   |  8   |  9   |   0  |
  * |------+------+------+------+------|                             |------|------+------+------+------|
@@ -114,7 +122,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
 [_LOWER] = LAYOUT( \
-  KC_GRV,  ____,   ____,    KC_MINS,____,                             ____,    KC_EQL,   ____,    KC_LBRC, KC_RBRC, \
+  KC_GRV,  ____,   ____,    KC_MINS, X(0),                          ____,    KC_EQL,   ____,    KC_LBRC, KC_RBRC, \
   KC_1,    KC_2,   KC_3,    KC_4,   KC_5,                             KC_6,    KC_7,     KC_8,    KC_9,    KC_0,    \
   KC_F1,   KC_F2,  KC_F3,   KC_F4,  KC_F5,                            KC_F6,   KC_F7,    KC_F8,   KC_F9,   KC_F10,  \
            KC_F11, KC_F12,                                                               ____,    ____,             \
